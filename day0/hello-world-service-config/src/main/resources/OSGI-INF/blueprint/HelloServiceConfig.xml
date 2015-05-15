@@ -1,0 +1,29 @@
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        >
+
+    <cm:property-placeholder persistent-id="org.jemz.karaf.tutorial.hello.service.config" update-strategy="reload" >
+        <cm:default-properties>
+            <cm:property name="org.jemz.karaf.tutorial.hello.service.msg" value="Hello World!"/>
+        </cm:default-properties>
+    </cm:property-placeholder>
+
+
+
+    <bean   id="hello-service-config"
+            class="org.jemz.karaf.tutorial.hello.service.config.HelloServiceConfig"
+            init-method="startup"
+            destroy-method="shutdown">
+
+        <property name="helloServiceConfiguration">
+            <props>
+                <prop key="org.jemz.karaf.tutorial.hello.service.msg" value="${org.jemz.karaf.tutorial.hello.service.msg}"/>
+            </props>
+        </property>
+    </bean>
+
+    <service ref="hello-service-config" interface="org.jemz.karaf.tutorial.hello.IHelloService" />
+
+</blueprint>
+

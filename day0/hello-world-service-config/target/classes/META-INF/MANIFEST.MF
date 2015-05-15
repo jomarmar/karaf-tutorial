@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1431695057060
+Build-Jdk: 1.8.0_40
+Built-By: jmartinez
+Bundle-Blueprint: OSGI-INF/blueprint/HelloServiceConfig.xml
+Bundle-Description: JemZ Karaf Tutorial
+Bundle-DocURL: https://jomarmar.github.io
+Bundle-ManifestVersion: 2
+Bundle-Name: hello-world-service-config
+Bundle-SymbolicName: hello-world-service-config
+Bundle-Vendor: JemZ
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Service: org.jemz.karaf.tutorial.hello.IHelloService
+Import-Package: org.jemz.karaf.tutorial.hello,org.osgi.service.blueprint
+ ;version="[1.0.0,2.0.0)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-2.4.1.201501161923
