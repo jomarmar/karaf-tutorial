@@ -1,0 +1,19 @@
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        >
+
+    <bean   id="hello-service-caller"
+            class="org.jemz.karaf.tutorial.hello.service.caller.HelloServiceCaller"
+            init-method="startup"
+            destroy-method="shutdown"/>
+
+    <reference id="hello-service" interface="org.jemz.karaf.tutorial.hello.service.IHelloService"
+               availability="optional">
+        <reference-listener bind-method="setHelloService"
+                            unbind-method="unsetHelloService">
+            <ref component-id="hello-service-caller"/>
+        </reference-listener>
+    </reference>
+</blueprint>
+

@@ -14,7 +14,7 @@
     <artifactId>hello-world-service-config</artifactId>
 
     <properties>
-        <bundle-namespace>org.jemz.karaf.tutorial.hello.service.config</bundle-namespace>
+        <bundle.namespace>org.jemz.karaf.tutorial.hello.service.config</bundle.namespace>
     </properties>
 
     <dependencies>

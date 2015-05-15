@@ -16,6 +16,7 @@
         <module>day0/hello-world-service</module>
         <module>day0/hello-world-service-basic</module>
         <module>day0/hello-world-service-config</module>
+        <module>day0/hello-world-service-caller</module>
     </modules>
 
 

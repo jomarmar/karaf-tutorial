@@ -23,7 +23,7 @@
         </property>
     </bean>
 
-    <service ref="hello-service-config" interface="org.jemz.karaf.tutorial.hello.IHelloService" />
+    <service ref="hello-service-config" interface="org.jemz.karaf.tutorial.hello.service.IHelloService" />
 
 </blueprint>
 

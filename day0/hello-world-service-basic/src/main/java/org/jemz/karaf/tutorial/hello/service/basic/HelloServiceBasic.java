@@ -1,6 +1,6 @@
 package org.jemz.karaf.tutorial.hello.service.basic;
 
-import org.jemz.karaf.tutorial.hello.IHelloService;
+import org.jemz.karaf.tutorial.hello.service.IHelloService;
 
 public class HelloServiceBasic implements IHelloService {
     @Override

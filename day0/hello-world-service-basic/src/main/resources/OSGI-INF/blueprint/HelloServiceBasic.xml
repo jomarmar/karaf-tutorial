@@ -1,0 +1,13 @@
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        >
+
+    <bean   id="hello-service-basic"
+            class="org.jemz.karaf.tutorial.hello.service.basic.HelloServiceBasic">
+    </bean>
+
+    <service ref="hello-service-basic" interface="org.jemz.karaf.tutorial.hello.service.IHelloService" />
+
+</blueprint>
+
