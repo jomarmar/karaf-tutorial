@@ -4,7 +4,7 @@
         >
 
     <bean   id="hello-service-caller"
-            class="org.jemz.karaf.tutorial.hello.service.caller.HelloServiceCaller"
+            class="org.jemz.karaf.tutorial.hello.service.caller.internal.HelloServiceCaller"
             init-method="startup"
             destroy-method="shutdown"/>
 

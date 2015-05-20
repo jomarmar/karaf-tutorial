@@ -4,7 +4,9 @@
         >
 
     <bean   id="hello-service-basic"
-            class="org.jemz.karaf.tutorial.hello.service.basic.HelloServiceBasic">
+            class="org.jemz.karaf.tutorial.hello.service.basic.internal.HelloServiceBasic"
+            init-method="startup"
+            destroy-method="shutdown">
     </bean>
 
     <service ref="hello-service-basic" interface="org.jemz.karaf.tutorial.hello.service.IHelloService" />

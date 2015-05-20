@@ -49,7 +49,7 @@
         <!-- plugins version -->
         <maven.compiler.plugin.version>3.3</maven.compiler.plugin.version>
         <maven.source.plugin.version>2.4</maven.source.plugin.version>
-        <maven.bundle.plugin.version>2.5.4</maven.bundle.plugin.version>
+        <maven.bundle.plugin.version>2.5.3</maven.bundle.plugin.version>
         <build.helper.plugin.version>1.9.1</build.helper.plugin.version>
         <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
 
@@ -158,7 +158,7 @@
                         <instructions>
                             <Bundle-SymbolicName>${bundle.symbolicName}</Bundle-SymbolicName>
                             <Bundle-Version>${project.version}</Bundle-Version>
-                            <!-- | assume public classes are in the top package, and private classes
+                            <!-- | assume public classes are in the top package, and internal classes
                                 are under ".internal" -->
                             <Export-Package>!${bundle.namespace}.internal.*,${bundle.namespace}.*;version="${project.version}"</Export-Package>
                             <Private-Package>${bundle.namespace}.internal.*</Private-Package>

@@ -12,7 +12,7 @@
 
 
     <bean   id="hello-service-config"
-            class="org.jemz.karaf.tutorial.hello.service.config.HelloServiceConfig"
+            class="org.jemz.karaf.tutorial.hello.service.config.internal.HelloServiceConfig"
             init-method="startup"
             destroy-method="shutdown">
 
