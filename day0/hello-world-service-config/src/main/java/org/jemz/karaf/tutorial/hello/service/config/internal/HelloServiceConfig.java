@@ -6,6 +6,8 @@ import java.util.Properties;
 
 public class HelloServiceConfig implements IHelloService {
 
+    private static final String HELLO_SERVICE_MSG_CONFIG = "org.jemz.karaf.tutorial.hello.service.msg";
+
     private String msg = null;
 
     /**
@@ -27,7 +29,7 @@ public class HelloServiceConfig implements IHelloService {
      * Blueprint: set configuration properties
      */
     public void setHelloServiceConfiguration(Properties properties) {
-        msg = (String) properties.get("org.jemz.karaf.tutorial.hello.service.msg");
+        msg = (String) properties.get(HELLO_SERVICE_MSG_CONFIG);
     }
 
     @Override
