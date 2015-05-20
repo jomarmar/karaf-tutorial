@@ -32,7 +32,6 @@
 
     <properties>
 
-        <bundle.symbolicName>${project.artifactId}</bundle.symbolicName>
         <bundle.namespace>namespace</bundle.namespace>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -140,7 +139,6 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-
                     <version>${maven.compiler.plugin.version}</version>
                     <configuration>
                         <source>8</source>
@@ -156,7 +154,7 @@
                     <extensions>true</extensions>
                     <configuration>
                         <instructions>
-                            <Bundle-SymbolicName>${bundle.symbolicName}</Bundle-SymbolicName>
+                            <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                             <Bundle-Version>${project.version}</Bundle-Version>
                             <!-- | assume public classes are in the top package, and internal classes
                                 are under ".internal" -->
