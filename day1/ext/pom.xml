@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <organization>
+        <name>JemZ</name>
+        <url>https://jomarmar.github.io</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <name>Jorge Martinez</name>
+            <id>jomarmar</id>
+            <email>jomarmar@gmail.com</email>
+            <roles>
+                <role>Architect, Developer</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.jemz.osgi</groupId>
+    <artifactId>osgi-extlibs-reactor</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <name>${project.artifactId}</name>
+    <description>OSGi Wrappers for external libraries</description>
+
+
+    <packaging>pom</packaging>
+
+
+    <properties>
+        <maven.bundle.plugin.version>2.5.3</maven.bundle.plugin.version>
+
+        <bundle.symbolicName>""</bundle.symbolicName>
+        <wrapped.version></wrapped.version>
+
+    </properties>
+
+
+    <modules>
+        <module>marvin-osgi</module>
+    </modules>
+
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>${maven.bundle.plugin.version}</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <instructions>
+                            <Bundle-SymbolicName>${bundle.symbolicName}</Bundle-SymbolicName>
+                            <Bundle-Version>${wrapped.version}</Bundle-Version>
+                            <!--
+                             | export wrapped contents: don't use Export-Package:* as this bundles everything on the classpath
+                            -->
+                            <_exportcontents>*</_exportcontents>
+                            <Private-Package>!*</Private-Package>
+                            <!--
+                             | each module can override these defaults in their osgi.bnd file
+                            -->
+                            <_include>-osgi.bnd</_include>
+                        </instructions>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
