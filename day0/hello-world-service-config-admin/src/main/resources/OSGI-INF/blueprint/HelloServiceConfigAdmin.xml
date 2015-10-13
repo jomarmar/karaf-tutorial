@@ -1,0 +1,20 @@
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        >
+
+    <cm:property-placeholder persistent-id="org.jemz.karaf.tutorial.hello.service.config.admin" update-strategy="reload" />
+
+    <bean   id="hello-service-config-admin"
+            class="org.jemz.karaf.tutorial.hello.service.config.admin.internal.HelloServiceConfigAdmin"
+            init-method="startup"
+            destroy-method="shutdown">
+        <property name="helloServiceConfiguration" ref="config-admin"/>
+    </bean>
+
+    <service ref="hello-service-config" interface="org.jemz.karaf.tutorial.hello.service.IHelloService" />
+
+    <reference id="config-admin" interface="org.osgi.service.cm.ConfigurationAdmin" availability="mandatory"/>
+
+</blueprint>
+
