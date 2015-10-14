@@ -59,6 +59,9 @@ public class HelloServiceConfigAdmin implements IHelloService {
                     System.out.println("UNUSED KEY: " + key + " VAL: " + (String)serviceProps.get(key));
                 }
             }
+        } catch(NullPointerException e) {
+          // Config file doesn't exist
+            msg = "Default Message";
         } catch (IOException e) {
             // Ignore error
         }

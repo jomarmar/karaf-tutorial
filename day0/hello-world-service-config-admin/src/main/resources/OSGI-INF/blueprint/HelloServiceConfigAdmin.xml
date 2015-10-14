@@ -12,7 +12,7 @@
         <property name="helloServiceConfiguration" ref="config-admin"/>
     </bean>
 
-    <service ref="hello-service-config" interface="org.jemz.karaf.tutorial.hello.service.IHelloService" />
+    <service ref="hello-service-config-admin" interface="org.jemz.karaf.tutorial.hello.service.IHelloService" />
 
     <reference id="config-admin" interface="org.osgi.service.cm.ConfigurationAdmin" availability="mandatory"/>
 
