@@ -13,11 +13,11 @@
     <modules>
 
         <module>parent</module>
-        <module>day0/hello-world-service</module>
-        <module>day0/hello-world-service-basic</module>
-        <module>day0/hello-world-service-config</module>
-        <module>day0/hello-world-service-config-admin</module>
-        <module>day0/hello-world-service-caller</module>
+        <module>hello-world/hello-world-service</module>
+        <module>hello-world/hello-world-service-basic</module>
+        <module>hello-world/hello-world-service-config</module>
+        <module>hello-world/hello-world-service-config-admin</module>
+        <module>hello-world/hello-world-service-caller</module>
     </modules>
 
 

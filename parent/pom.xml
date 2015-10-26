@@ -38,8 +38,9 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- dependencies version -->
-        <osgi.version>5.0.0</osgi.version>
-        <karaf.version>3.0.3</karaf.version>
+        <osgi.version>6.0.0</osgi.version>
+        <osgi.compendium.version>5.0.0</osgi.compendium.version>
+        <karaf.version>4.0.2</karaf.version>
         <slf4j.version>1.7.12</slf4j.version>
         <junit.version>4.12</junit.version>
         <log4j.version>1.2.17</log4j.version>
@@ -48,9 +49,9 @@
         <!-- plugins version -->
         <maven.compiler.plugin.version>3.3</maven.compiler.plugin.version>
         <maven.source.plugin.version>2.4</maven.source.plugin.version>
-        <maven.bundle.plugin.version>2.5.3</maven.bundle.plugin.version>
+        <maven.bundle.plugin.version>3.0.0</maven.bundle.plugin.version>
         <build.helper.plugin.version>1.9.1</build.helper.plugin.version>
-        <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>2.19</maven-surefire-plugin.version>
 
     </properties>
 
@@ -66,7 +67,7 @@
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.compendium</artifactId>
-                <version>${osgi.version}</version>
+                <version>${osgi.compendium.version}</version>
                 <scope>provided</scope>
             </dependency>
 
@@ -80,7 +81,6 @@
             <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
-
                 <version>${log4j.version}</version>
             </dependency>
 
@@ -117,6 +117,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -188,8 +189,6 @@
                             </goals>
                             <configuration>
                                 <artifacts>
-                                    <!-- <artifact> <file>target/classes/features.xml</file> <type>xml</type>
-                                        <classifier>features</classifier> </artifact> -->
                                     <artifact>
                                         <file>target/classes/${bundle.namespace}.cfg</file>
                                         <type>cfg</type>
@@ -203,7 +202,6 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-
                     <version>${maven.source.plugin.version}</version>
                     <executions>
                         <execution>
